@@ -20,7 +20,7 @@
 	<script>
 		var grow = setInterval(growing, 1000);
 		var font_size = 5;
-		var p = documnet.getElementById("demo");
+		var p = document.getElementById("demo");
 
 		function growing() {
 			p.innerHTML = "TEXT GROWING";
@@ -28,7 +28,7 @@
 			font_size += 5;
 
 			if (font_size >= 50) {
-				cleanInterval(grow);
+				clearInterval(grow);
 				shrink = setInterval(shrinking, 1000);
 			}
 		}
@@ -39,7 +39,7 @@
 			p.setAttribute('style', "font-size:" + font_size + "px; color: blue");
 
 			if (font_size === 5) {
-				cleanInterval(shrink);
+				clearInterval(shrink);
 				grow = setInterval(growing, 1000);
 			}
 		}
