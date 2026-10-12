@@ -4,81 +4,84 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Calculator</title>
-
 	<style>
 		body {
-			background-color: lightgrey;
-			font-family: Arial;
-			padding: 250px;
+			background-color:  #f0f2f5;
+			font-family: Arial, sans-serif;
+			height: 100vh; 
 			display: flex;
             justify-content: center;
+			align-items: center; 
 		}
 
-		.myCalc {
-			width: 260px;
-			height: auto;
-			border: 2px solid black;
-			padding: 16px;
-			background-color: skyblue;
-			border-radius: 8px;
-			align-content: center;
-			box-sizing: border-box;
+		.calculator {
+			width: 300px;
+			padding: 25px;
+			background-color: white;
+			border-radius: 15px;
+			text-align: center;
+			box-shadow: 0 0 10px gray; 
 		}
 
 		h2 {
-			text-align: center;
+			color: #333;
+			margin-bottom: 20px; 
 		}
 
  		input, select, button {
-            padding: 8px;
-            margin-bottom: 12px;
-            box-sizing: border-box;
-            border-radius: 4px;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 8px;
             border: 1px solid #ccc;
+			width: 80%;
+			font-size: 16px;
         }
 
         button {
-            background-color: grey;
+			width: 85%;
+            background-color: #0078d7;
             color: white;
             border: none;
-            font-size: 16px;
             cursor: pointer;
-            font-weight: bold;
         }
-
-
-
+		 button:hover {
+			 background-color: #005fa3;
+		 } 
+		#result {
+			margin-top: 15px;
+			font-weight: bold;
+			color: green;
+		} 
 	</style>
-
 </head>
 <body>
-	<div class="myCalc">
+	<div class="calculator">
 		<h2>Calculator</h2>
 
-		<input type="number" id="firstNumber" placeholder="Enter First Number">
+		<input type="number" id="firstNumber" placeholder="Enter First Number"><br>
 
 		<select id="operator">
 			<option value="+">Addition</option>
 			<option value="-">Subtraction</option>
 			<option value="*">Multiplication</option>
 			<option value="/">Division</option>
-		</select>
+		</select><br>
 
 		<input type="number" id="secondNumber" placeholder="Enter Second Number">
 
 		<button onclick="calculate()">Calculate</button>
 
-		<div id="calculatedResult"></div>
+		<div id="result"></div>
 
 	</div>
 
 	<script>
 		function calculate() {
 
-			var firstNumber = parseFloat(document.getElementById("firstNumber").value);
-			var secondNumber = parseFloat(document.getElementById("secondNumber").value);
-			var operator = document.getElementById("operator").value;
-			var result;
+			let firstNumber = parseFloat(document.getElementById("firstNumber").value);
+			let secondNumber = parseFloat(document.getElementById("secondNumber").value);
+			let operator = document.getElementById("operator").value;
+			let result;
 
 			if(isNaN(firstNumber) || isNaN(secondNumber)) {
 				document.getElementById("calculatedResult").innerText = "Please Enter Both Numbers";
