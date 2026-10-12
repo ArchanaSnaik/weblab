@@ -1,49 +1,63 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lab2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 2</title>
 
-	<style>
-		p {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-	</style>
+    <style>
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-	<p id="demo"></p>
 
-	<script>
-		var grow = setInterval(growing, 1000);
-		var font_size = 5;
-		var p = document.getElementById("demo");
+    <p id="demo"></p>
 
-		function growing() {
-			p.innerHTML = "TEXT GROWING";
-			p.setAttribute('style', "font-size:" + font_size + "px; color: red");
-			font_size += 5;
+    <script>
+        var font_size = 5;
+        var p = document.getElementById("demo");
 
-			if (font_size >= 50) {
-				clearInterval(grow);
-				shrink = setInterval(shrinking, 1000);
-			}
-		}
+        p.innerHTML = "TEXT-GROWING";
+        p.style.fontSize = font_size + "pt";
+        p.style.color = "red";
 
-		function shrinking() {
-			font_size -= 5;
-			p.innerHTML = "TEXT SHRINKING";
-			p.setAttribute('style', "font-size:" + font_size + "px; color: blue");
+        var grow = setInterval(growing, 100);
 
-			if (font_size === 5) {
-				clearInterval(shrink);
-				grow = setInterval(growing, 1000);
-			}
-		}
+        function growing() {
+            font_size += 1;
 
-	</script>
+            p.innerHTML = "TEXT-GROWING";
+            p.style.fontSize = font_size + "pt";
+            p.style.color = "red";
+
+            if (font_size >= 50) {
+                clearInterval(grow);
+
+                p.innerHTML = "TEXTSHRINKING";
+                p.style.color = "blue";
+
+                var shrink = setInterval(shrinking, 100);
+            }
+        }
+
+        function shrinking() {
+            font_size -= 1;
+
+            p.innerHTML = "TEXTSHRINKING";
+            p.style.fontSize = font_size + "pt";
+            p.style.color = "blue";
+
+            if (font_size <= 5) {
+                clearInterval(shrink);
+            }
+        }
+    </script>
+
 </body>
 </html>
