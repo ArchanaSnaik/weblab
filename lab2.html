@@ -22,14 +22,12 @@
     <script>
         var font_size = 5;
         var p = document.getElementById("demo");
-
-        p.innerHTML = "TEXT-GROWING";
-        p.style.fontSize = font_size + "pt";
-        p.style.color = "red";
-
         var grow = setInterval(growing, 100);
 
         function growing() {
+            p.innerHTML = "TEXT-GROWING";
+            p.style.fontSize = font_size + "pt";
+            p.style.color = "red";
             font_size += 1;
 
             p.innerHTML = "TEXT-GROWING";
