@@ -84,7 +84,7 @@
 			let result;
 
 			if(isNaN(firstNumber) || isNaN(secondNumber)) {
-				document.getElementById("calculatedResult").innerText = "Please Enter Both Numbers";
+				document.getElementById("result").innerText = "Please Enter Both Numbers";
 				return;
 			}
 
@@ -99,13 +99,13 @@
 			}
 			else if (operator == "/") {
 				if (secondNumber == 0) {
-					document.getElementById("calculatedResult").innerText = "Can't divided by zero";
+					document.getElementById("result").innerText = "Cannot divide by zero";
 					return;
 				}
 				result = firstNumber / secondNumber;
 			}
 
-			document.getElementById("calculatedResult").innerText = "Result:" + result;
+			document.getElementById("result").innerText = "Result: " + result;
 		}
 	</script>
 
