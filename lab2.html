@@ -24,10 +24,11 @@
         var p = document.getElementById("demo");
         var grow = setInterval(growing, 100);
 
+        p.innerHTML = "TEXT-GROWING";
+        p.style.fontSize = font_size + "pt";
+        p.style.color = "red";
+
         function growing() {
-            p.innerHTML = "TEXT-GROWING";
-            p.style.fontSize = font_size + "pt";
-            p.style.color = "red";
             font_size += 1;
 
             p.innerHTML = "TEXT-GROWING";
@@ -53,6 +54,7 @@
 
             if (font_size <= 5) {
                 clearInterval(shrink);
+                grow = setInterval(growing, 100);
             }
         }
     </script>
