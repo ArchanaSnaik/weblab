@@ -24,7 +24,7 @@
 
 		function growing() {
 			p.innerHTML = "TEXT GROWING";
-			p.setAttribute('style', "font-size:" + font_size + "px; color: red");
+			p.setAttribute('style', "font-size:" + font_size + "pt; color: red");
 			font_size += 5;
 
 			if (font_size >= 50) {
@@ -36,7 +36,7 @@
 		function shrinking() {
 			font_size -= 5;
 			p.innerHTML = "TEXT SHRINKING";
-			p.setAttribute('style', "font-size:" + font_size + "px; color: blue");
+			p.setAttribute('style', "font-size:" + font_size + "pt; color: blue");
 
 			if (font_size === 5) {
 				clearInterval(shrink);
